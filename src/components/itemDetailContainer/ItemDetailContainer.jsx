@@ -9,7 +9,7 @@ import { CartContext } from '../../context/CartContext';
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
-  const { addItem } = useContext(CartContext); // <-- Corregido: ahora usas addItem
+  const { addItem } = useContext(CartContext); 
 
   useEffect(() => {
     const itemRef = doc(db, 'products', id);
@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (quantity) => {
-    addItem(item, quantity); // <-- Llama a la función addItem que ya tiene toda la lógica
+    addItem(item, quantity); 
   };
 
   return (

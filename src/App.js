@@ -6,12 +6,12 @@ import ItemDetailContainer from './components/itemDetailContainer/ItemDetailCont
 import Cart from './components/pages/Cart';
 import Checkout from './components/pages/Checkout';
 import './App.css'; 
-import { CartProvider } from './context/CartContext'; // <-- Importación correcta
+import { CartProvider } from './context/CartContext'; 
 
 function App() {
   return (
     <BrowserRouter>
-      <CartProvider> {/* <-- Esto le da el contexto del carrito a toda la app */}
+      <CartProvider> {}
         <div className="App">
           <NavBar />
           <Routes>

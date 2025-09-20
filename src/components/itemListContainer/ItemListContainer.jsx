@@ -7,11 +7,11 @@ import './ItemListContainer.css';
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true); // <-- Estado de carga
+  const [loading, setLoading] = useState(true); 
   const { categoryId } = useParams();
 
   useEffect(() => {
-    setLoading(true); // <-- Iniciamos en `true` al cargar o cambiar de categoría
+    setLoading(true); 
 
     const productsRef = collection(db, 'products');
 
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
         console.error('Error al obtener los documentos:', error);
       })
       .finally(() => {
-        setLoading(false); // <-- Terminamos de cargar, sin importar si hubo un error o no
+        setLoading(false); 
       });
   }, [categoryId]);
 

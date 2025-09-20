@@ -54,7 +54,7 @@ const Checkout = () => {
         await batch.commit(); 
         setOrderId(docRef.id);
         clearCart();
-        console.log("Orden generada con éxito. ID:", docRef.id); // <-- Añadido para depurar
+        console.log("Orden generada con éxito. ID:", docRef.id); 
       } catch (error) {
         console.error('Error al crear la orden:', error);
       }

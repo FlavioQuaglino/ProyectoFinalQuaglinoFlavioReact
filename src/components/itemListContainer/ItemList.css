@@ -1,7 +1,7 @@
 .item-list {
-  display: flex; /* Activamos el modo Flexbox */
-  flex-wrap: wrap; /* Permite que los productos se acomoden en la siguiente línea */
-  justify-content: center; /* Centra los productos en la fila */
-  gap: 20px; /* Espacio entre los productos */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px;
   padding: 20px;
 }

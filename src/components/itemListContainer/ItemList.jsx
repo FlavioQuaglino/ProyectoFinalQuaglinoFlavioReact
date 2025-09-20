@@ -1,10 +1,10 @@
 import React from 'react';
 import Item from './Item';
-import './ItemList.css'; // Asegúrate de importar el CSS
+import './ItemList.css'; 
 
 const ItemList = ({ items }) => {
   return (
-    <div className="item-list"> {/* <-- ¡Asegúrate de que tenga esta clase! */}
+    <div className="item-list"> {}
       {items.map((item) => (
         <Item key={item.id} item={item} />
       ))}

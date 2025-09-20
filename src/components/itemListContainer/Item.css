@@ -1,14 +1,14 @@
 .item-link {
   display: inline-block;
-  background-color: #4a148c; /* Morado oscuro */
-  color: #fff; /* Texto blanco */
-  padding: 10px 20px; /* Espacio interno para que se vea más grande */
-  text-decoration: none; /* Quita la línea de abajo */
-  border-radius: 5px; /* Bordes redondeados */
-  margin-top: 10px; /* Un poco de espacio arriba */
+  background-color: #4a148c; 
+  color: #fff; 
+  padding: 10px 20px; 
+  text-decoration: none; 
+  border-radius: 5px; 
+  margin-top: 10px; 
   font-weight: bold;
 }
 
 .item-link:hover {
-  background-color: #7b1fa2; /* Un tono más claro al pasar el mouse */
+  background-color: #7b1fa2;
 }
