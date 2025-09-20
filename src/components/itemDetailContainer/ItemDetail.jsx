@@ -5,7 +5,7 @@ import './ItemDetail.css';
 const ItemDetail = ({ item, onAdd }) => {
   return (
     <div className="item-detail">
-      <img src={item.imagen} alt={item.nombre} />
+      <img src={item.img} alt={item.nombre} /> {/* <-- ¡Aquí está el cambio! */}
       <div>
         <h2>{item.nombre}</h2>
         <p>{item.descripcion}</p>

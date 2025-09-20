@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
-import cartIcon from '../../assets/cart-icon.svg'; // Aquí está la ruta corregida
 
 const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext);
 
   return (
-    <div>
-      <img src={cartIcon} alt="Carrito" style={{ width: 24, height: 24 }} />
-      <span>{totalQuantity}</span>
-    </div>
+    <Link to="/cart">
+      <div className="cart-widget">
+        <span>🛒</span>
+        <span>{totalQuantity}</span>
+      </div>
+    </Link>
   );
 };
 

@@ -7,9 +7,12 @@ import './ItemListContainer.css';
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true); // <-- Estado de carga
   const { categoryId } = useParams();
 
   useEffect(() => {
+    setLoading(true); // <-- Iniciamos en `true` al cargar o cambiar de categoría
+
     const productsRef = collection(db, 'products');
 
     const q = categoryId
@@ -23,19 +26,23 @@ const ItemListContainer = () => {
           ...doc.data(),
         }));
         
-        // La línea que agregué para depurar
-        console.log("Datos recibidos de Firebase:", itemsAdapted);
-        
         setItems(itemsAdapted);
       })
       .catch((error) => {
         console.error('Error al obtener los documentos:', error);
+      })
+      .finally(() => {
+        setLoading(false); // <-- Terminamos de cargar, sin importar si hubo un error o no
       });
   }, [categoryId]);
 
+  if (loading) {
+    return <h2 className="loading-message">Cargando productos...</h2>;
+  }
+
   return (
     <div className="item-list-container">
-      {items.length > 0 ? <ItemList items={items} /> : <p>Cargando productos...</p>}
+      {items.length > 0 ? <ItemList items={items} /> : <h2>No se encontraron productos</h2>}
     </div>
   );
 };

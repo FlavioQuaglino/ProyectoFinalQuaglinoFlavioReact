@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom'; // Asegúrate de que Link esté importado
 import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
-  const { cart } = useContext(CartContext);
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const { totalQuantity } = useContext(CartContext);
 
   return (
-    <div className="cart-widget">
-      <span>{totalItems}</span>
-      <img src="https://firebasestorage.googleapis.com/v0/b/harrypotter-ecommerce.appspot.com/o/shopping-cart.png?alt=media&token=1e5d95e0-8199-4d37-8e6d-74d75d31f0d3" alt="Carrito de compras" style={{ width: '25px', height: 'auto' }} />
-    </div>
+    <Link to="/cart"> {/* Lo envolvemos en un Link para que sea cliqueable */}
+      <div className="cart-widget">
+        <span role="img" aria-label="carrito">🛒</span> {/* ¡Aquí está el emoticono! */}
+        <span>{totalQuantity}</span>
+      </div>
+    </Link>
   );
 };
 

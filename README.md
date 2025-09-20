@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+Potter E-Commerce 🧙‍♂️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Descripción del Proyecto
+Este proyecto es una tienda en línea (e-commerce) desarrollada con React.js, que simula la venta de productos de la temática de Harry Potter. La aplicación permite a los usuarios navegar por un catálogo de productos, agregarlos a un carrito de compras y finalizar la compra, todo mientras interactúa con una base de datos en la nube.
 
-## Available Scripts
+Características Principales
 
-In the project directory, you can run:
+1. Navegación y Vistas Dinámicas
+Página Principal: Muestra todos los productos disponibles.
 
-### `npm start`
+Categorías: Permite filtrar los productos por categorías (ej. Libros, Películas).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Vista de Detalle: Al hacer clic en un producto, se muestra una página dedicada con más información.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Gestión del Carrito de Compras
+Los usuarios pueden agregar productos al carrito y ver el total y la cantidad seleccionada.
 
-### `npm test`
+El carrito permite eliminar productos o vaciar la compra completa.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La funcionalidad del carrito se maneja de forma centralizada con el Context API de React, lo que asegura que la información esté disponible en toda la aplicación.
 
-### `npm run build`
+3. Persistencia de Datos
+Backend en la nube: Utiliza Firestore (una base de datos de Google Firebase) para almacenar y gestionar los datos de los productos y las órdenes de compra.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Validación de Stock: Antes de confirmar una compra, la aplicación verifica el stock disponible en la base de datos para evitar ventas en exceso.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Generación de Órdenes: Al finalizar la compra, se crea un nuevo documento en Firestore con todos los detalles de la orden, incluyendo la información del comprador, los productos y el total.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Tecnologías Utilizadas
 
-### `npm run eject`
+Frontend: React.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Manejo de rutas: React Router DOM
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Manejo de estado: React Context API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Backend: Firebase
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Base de Datos: Firestore
 
-## Learn More
+Estructura de la Carpeta
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Una breve descripción de la estructura principal del proyecto:
 
-### Code Splitting
+src/components/: Contiene los componentes reutilizables de la aplicación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+navBar/: Componentes de navegación.
 
-### Analyzing the Bundle Size
+itemListContainer/: Lógica para mostrar listas de productos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+itemDetailContainer/: Lógica para mostrar detalles de un solo producto.
 
-### Making a Progressive Web App
+pages/: Contiene los componentes de las diferentes vistas de la app (Carrito, Checkout, etc.).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+src/context/: El CartContext que maneja el estado global del carrito.
 
-### Advanced Configuration
+src/firebaseConfig.js: Archivo de configuración para la conexión con Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Autor
+QUAGLINO FLAVIO
